@@ -4,15 +4,15 @@ import java.lang.Integer;
 
 public class PE5{
 	public static void main(String[] args){
-		for(int i= 20*19; i<Integer.MAX_VALUE; i++){
-			boolean goodnum = true;
-			for(int j = 20; j>0; j--){
+		for(int i= 20*19; i<Integer.MAX_VALUE; i++){	//will go through all integers until it reaches an answer
+			boolean goodnum = true;	//if it is the right number
+			for(int j = 20; (goodnum == true) && (j>0); j--){	//goes through from 20 to 1 and tests if it is divisible, if not, it is not a goodnum, move on
 				if(i%j != 0){
 					goodnum = false;
 				}
 			}
 			if(goodnum == true){
-				System.out.println("number is: " +  i);
+				System.out.println("number is: " +  i);	//answer
 				return;
 			}
 		//	else{
@@ -23,24 +23,3 @@ public class PE5{
 		return;
 	}
 }
-/*
-public class PE5{
-	public static void main(String[] args){
-//		ArrayList<Int> noDoubles = new ArrayList(); 
-//		System.out.println("Initial size of al: " + noDoubles.size()); 
-		int result = 1;
-		for(int i = 2; i<=20; i++){
-			if(i*2 <= 20){
-			}
-			else{
-				//noDoubles.add(i);
-				result = result * i;
-			}
-		}
-//		System.out.println("contents of noDoubles: " + noDoubles);
-		System.out.println(result);
-		return;
-		
-	}
-}
-*/

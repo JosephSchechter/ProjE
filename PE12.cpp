@@ -25,10 +25,10 @@ using namespace std;
 int main(){
 	//create list of triangle numbers  and get number of divisors of that tNum
 	long long longestNumDivisors = 1;	//longest number of divisors
-	long long ans = 1;
-	long long num = 1;
-	long long tNum = 0;
-	while(longestNumDivisors < 500){
+	long long ans = 1;	//answer
+	long long num = 1;	//the base number	
+	long long tNum = 0;	//the number after added to the earlier bases
+	while(longestNumDivisors < 500){	//we want the number with 500+ divisors
 		//get tNum from num
 		tNum = tNum + num;
 		/*
@@ -40,7 +40,7 @@ int main(){
 		cout << "tNum = " << tNum << endl;
 		
 		long long numDivisors = 1; //(itself)
-		for(long long i = 1; i<= (tNum/2); i++){
+		for(long long i = 1; i<= (tNum/2); i++){	//goes through all nevessary numbers to get to the number of divisors for that number
 			if(tNum%i == 0){
 				numDivisors++;
 			}
@@ -48,12 +48,12 @@ int main(){
 		
 		cout << "numDivisors = " << numDivisors << endl;
 		
-		if(numDivisors>longestNumDivisors){
+		if(numDivisors>longestNumDivisors){	//if it has the most divisors, so far, update
 			longestNumDivisors = numDivisors;
 			ans = tNum;
 		}
 		
-		num++;
+		num++;//next base number
 	}
 	
 	cout << "the first tNum with > 500 divisors is: " << ans << " with " << longestNumDivisors << endl;

@@ -13,6 +13,7 @@ public class PE11{
 		//BufferedReader br = new BufferedReader(new InputStreamReader(in));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
+		//reads in a line at a time, then parses it into 20 different numbers split by spaces
 		for(int first = 0; first < 20; first++){
 			try{
 			tempLine = br.readLine();
@@ -38,7 +39,7 @@ public class PE11{
 
 		int largestMutliple = 0;
 		
-		//If we go from [0][0] to [0][19] and then down [1][0] and across again, we only have to look for 4 down, 4 to the right, 4 down/diag/right and 4 updiag/right
+		//If we go from [0][0] to [0][19] and then down [1][0] and across again, we only have to look for 4 down, 4 to the right, 4 down/diag/right and 4 up/diag/right
 		for(int first = 0; first < 20; first++){
 			for(int second = 0; second < 20; second++){
 				//check this and 3 right below it

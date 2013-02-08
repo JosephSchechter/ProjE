@@ -19,21 +19,29 @@ What is the value of the first triangle number to have over five hundred divisor
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+This is based off of a mathematical idea that 2 numbers (n and n+1) can't have the same divisors, except 1, this speeds up the computation of the answer a lot, and that every triangle number can be written as n*(n-1)/2,
+
+the number of divisors is divisors(n)*divisors(n+1) - divisors(removed by the division of 2)
+
+*/
+
 using namespace std;
 
+//this returns the number of divisors based on 
 long long num_divisors(long long n){
-	if(n%2 == 0){
+	if(n%2 == 0){//only one of the numbers can be even, the other one needs to be odd
 		n = n/2;
 	}
 	long long divisors = 1; //itself
 	long long count = 0;
-	while(n%2 == 0){
+	while(n%2 == 0){	//if it is even, then you can keep dividing by 2
 		count++;
 		n = n/2;
 	}
-	divisors = divisors * (count + 1);
+	divisors = divisors * (count + 1);	//just the count for the even divisors of n
 	long long p = 3;
-	while(n != 1){
+	while(n != 1){	//this goes through the odd divisors of n
 		count = 0;
 		while (n%p == 0){
 			count++;
@@ -48,10 +56,10 @@ long long num_divisors(long long n){
 
 int main(){
 
-	long long n = 1;
+	long long n = 1;	//the number you will be testing
 	long long lnum = num_divisors(n);
 	long long rnum = num_divisors(n+1);
-	while(lnum * rnum < 500){
+	while(lnum * rnum < 500){	//number of divisors of n and n+1 multiplied togeather
 		n++;
 		lnum = num_divisors(n);
 		rnum = num_divisors(n+1);

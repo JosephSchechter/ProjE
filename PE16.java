@@ -9,20 +9,22 @@ import java.math.*;
 
 public class PE16{
 	public static void main(String[] args){
-//		double num = Math.pow(2,1000);
+//		double num = Math.pow(2,1000);	//this number ended up being too large for doubles to hold
 		BigInteger bi = BigInteger.valueOf(2);
-		BigInteger num = bi.pow(1000);
+		BigInteger num = bi.pow(1000);	//2^1000
 		System.out.println("whole number: " + num);
-		BigInteger ten = BigInteger.valueOf(10);
 		
 		
+//		BigInteger ten = BigInteger.valueOf(10);
+		
+		//splitting the number into a string so the characters can be accessed and added togeather as integers
 		String numString = num.toString();
 		int len = numString.length();
 		char c;
 		int total = 0;
 		for(int i = 0; i<len; i++){
 			c = numString.charAt(i);
-			System.out.println("number: " + (c-48));
+			System.out.println("number: " + (c-48));//converts the character for a number into the numerical value
 			total = total + (c-48);
 		}
 		

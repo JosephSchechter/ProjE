@@ -14,6 +14,7 @@ public class PE9{
 		int a = 1;
 		int b = 1;
 		
+		//brute force method to check all values from 1-1000 if they meet the 2 conditions a+b+c==1000 abd c^2 == a^2 + b^2
 		for(c=1; c<998; c++){
 			for(b=1; b<998; b++){
 				for(a=1;a<998; a++){
