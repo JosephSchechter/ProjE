@@ -7,6 +7,7 @@
 #this uses the binomial coefficiant, where it is n!/((n-k)!k!)
 # mathematically it can be made recursive, it takes the (n!/k!)*(1/(n-k)!) equation and slowly lowers it until the k reaches 0 
 
+#recursive code for binomial coefficiant based on http://userpages.umbc.edu/~rcampbel/Computers/Python/probstat.html
 def binom(n,k): return 1 if (k == 0) else n*binom(n-1,k-1)/k
 x = binom(20+20, 20)
 print(x)
